@@ -1,8 +1,6 @@
 # 590PR Final Project 
 
-
 **Title: Monte Carlo Simulation – Who will survive?**
-
 Team Members: Zhe Zhang, Gangfeng Huang 
 
 **Project Description:**
@@ -30,7 +28,29 @@ As the chance for any player to win a game is quite low, we will simulate 100,00
 2.	For player X, selecting high magnificent scope can increase his chance to win most
 
 **Simulation variables:**
+self.basic_acc: shooting hit rate of player X
+self.acc_change: the amount of accuracy change of skill 1 and 2
+self.def_change: the amount of defence change of skill 1 and 2
+self.other_acc: the mean accuracy of other players
+self.acc_std: the standard deviation of other players
+self.num_players: the number of players in the game
+self.acc: the accuracy of player X after choosing the ability
+self.blood: the actual HP of player X after choosing the ability
+self.head_percentage: the percentage one person shoots another person at his head
+
+parameters for HP damage normal distribution 
+self.head_mean_damage: 
+self.head_std_damage:
+self.body_mean_damage:
+self.body_std_damage:
 
 **Preliminary results:**
 
+
 **References:**
+GAMEPLAY RELATED. Retrieved from https://support.pubg.com/hc/en-us/categories/115000247733-GAMEPLAY-RELATED
+Networks. Retrieved from https://blogs.cornell.edu/info2040/2015/09/22/gunmans-dilemma-strategy-of-the-underdog/
+
+
+
+
