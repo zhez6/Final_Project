@@ -28,3 +28,9 @@ As the chance for any player to win a game is quite low, we will simulate 100,00
 **Hypotheses:**
 1.	The change of player X to win the game is three times higher than that of other players 
 2.	For player X, selecting high magnificent scope can increase his chance to win most
+
+**Simulation variables:**
+
+**Preliminary results:**
+
+**References:**
