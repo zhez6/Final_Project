@@ -48,7 +48,9 @@ self.body_std_damage:
 
 
 **References:**
+
 GAMEPLAY RELATED. Retrieved from https://support.pubg.com/hc/en-us/categories/115000247733-GAMEPLAY-RELATED
+
 Networks. Retrieved from https://blogs.cornell.edu/info2040/2015/09/22/gunmans-dilemma-strategy-of-the-underdog/
 
 
