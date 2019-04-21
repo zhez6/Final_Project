@@ -1,6 +1,7 @@
 # 590PR Final Project 
 
-**Title: Monte Carlo Simulation – Who will survive? **
+
+**Title: Monte Carlo Simulation – Who will survive?**
 
 Team Members: Zhe Zhang, Gangfeng Huang 
 
