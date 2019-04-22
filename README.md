@@ -48,17 +48,17 @@ the main character choosing his ability.
 2. self.blood: the actual blood of the main character after choosing the ability  
 
 **Preliminary results:**
-1) Select skill one: increase X% shooting rate, but will reduce the ability to resist damage Y%  
-   Winning rate of Player X: 1.29%  
-   Winning rate of other characters: 0.997070707070707%
+1) Select skill one: increase 10% shooting rate, but will reduce the ability to resist damage 5%  
+   Winning rate of Player X: 1.397%  
+   Winning rate of other characters: 0.995989898989899%
 
-2) Select skill two: increase the capability that resists damage by Y%., but will reduce the shooting hit rate X%  
-   Winning rate of Player X: 1.0999999999999999%  
-   Winning rate of other characters: 0.9989898989898991%
+2) Select skill two: increase the capability that resists damage by 10%., but will reduce the shooting hit rate 5%  
+   Winning rate of Player X: 0.996%  
+   Winning rate of other characters: 1.000040404040404%  
 
 3) Use the initial settings  
-   Winning rate of Player X: 1.06%  
-   Winning rate of other characters: 0.9993939393939394%
+   Winning rate of Player X: 1.2309999999999999%  
+   Winning rate of other characters: 0.9976666666666667%
 
 **References:**
 
