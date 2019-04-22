@@ -28,18 +28,18 @@ As the chance for any player to win a game is quite low, we will simulate 100,00
 2. For player X, selecting high magnificent scope can increase his chance to win most
 3. More than half of the games will finish within 15 rounds
 
-**Simulation variables:**
-basic_acc: basic accuracy of the player X  
-acc_change: the amount of accuracy change of skill 1 and 2  
-def_change: the amount of defence change of skill 1 and 2  
-other_acc: the mean accuracy of other players  
-acc_std: the standard deviation accuracy of other players  
-num_players: the number of players in the game, including the main character  
-head_percentage: the percentage one person shoots another person in his head  
-head_mean_damage: the mean damage when shooting a person in his head  
-head_std_damage: the standard deviation damage when shooting a person in his head  
-body_mean_damage: the mean damage when shooting a person in his body  
-body_std_damage: the standard deviation damage when shooting a person in his body  
+**Simulation variables:**  
+1. basic_acc: basic accuracy of the player X  
+2. acc_change: the amount of accuracy change of skill 1 and 2  
+3. def_change: the amount of defence change of skill 1 and 2  
+4. other_acc: the mean accuracy of other players  
+5. acc_std: the standard deviation accuracy of other players  
+6. num_players: the number of players in the game, including the main character  
+7. head_percentage: the percentage one person shoots another person in his head  
+8. head_mean_damage: the mean damage when shooting a person in his head  
+9. head_std_damage: the standard deviation damage when shooting a person in his head  
+10. body_mean_damage: the mean damage when shooting a person in his body  
+11. body_std_damage: the standard deviation damage when shooting a person in his body  
         
 The above param will be stored in self.param. In addition, two other params will be calculated after  
 the main character choosing his ability.  
@@ -62,7 +62,9 @@ Winning rate of other characters: 0.9993939393939394%
 **References:**
 
 GAMEPLAY RELATED. Retrieved from https://support.pubg.com/hc/en-us/categories/115000247733-GAMEPLAY-RELATED  
+
 Networks. Retrieved from https://blogs.cornell.edu/info2040/2015/09/22/gunmans-dilemma-strategy-of-the-underdog/  
+
 Tapsell, C. (2019, March 20). PUBG weapon damage stats - Bizon stats, damage chart and the best weapons in PUBG. Retrieved from https://www.eurogamer.net/articles/2019-03-20-pubg-weapon-damage-stats-best-weapons-5414#section-1
 
 
