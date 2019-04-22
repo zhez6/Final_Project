@@ -43,21 +43,22 @@ As the chance for any player to win a game is quite low, we will simulate 100,00
         
 The above param will be stored in self.param. In addition, two other params will be calculated after  
 the main character choosing his ability.  
-self.acc: the accuracy of the main character after choosing the ability  
-self.blood: the actual blood of the main character after choosing the ability  
+
+1. self.acc: the accuracy of the main character after choosing the ability  
+2. self.blood: the actual blood of the main character after choosing the ability  
 
 **Preliminary results:**
-1) Select skill one: increase X% shooting rate, but will reduce the ability to resist damage Y%
-Winning rate of Player X: 1.29%
-Winning rate of other characters: 0.997070707070707%
+1) Select skill one: increase X% shooting rate, but will reduce the ability to resist damage Y%  
+   Winning rate of Player X: 1.29%  
+   Winning rate of other characters: 0.997070707070707%
 
-2) Select skill two: increase the capability that resists damage by Y%., but will reduce the shooting hit rate X%
-Winning rate of Player X: 1.0999999999999999%
-Winning rate of other characters: 0.9989898989898991%
+2) Select skill two: increase the capability that resists damage by Y%., but will reduce the shooting hit rate X%  
+   Winning rate of Player X: 1.0999999999999999%  
+   Winning rate of other characters: 0.9989898989898991%
 
-3) Use the initial settings
-Winning rate of Player X: 1.06%
-Winning rate of other characters: 0.9993939393939394%
+3) Use the initial settings  
+   Winning rate of Player X: 1.06%  
+   Winning rate of other characters: 0.9993939393939394%
 
 **References:**
 
