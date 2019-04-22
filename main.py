@@ -2,7 +2,7 @@ import numpy as np
 import time
 import matplotlib.pyplot as plt
 import collections
-
+np.random.seed(20190604)
 # class Game:
 #     def __init__(self, b_acc, b_esc, skill_1_up_acc, skill_1_down_esc, skill_2_down_acc, skill_2_up_esc, num_players):
 #         self.b_acc = b_acc
@@ -211,7 +211,7 @@ class Game2:
 
 num_game = 10000
 g = Game2(0.5, 0.1, 0.05, 0.5, 0.05, 100, 0.3, 0.9, 0.06, 0.45, 0.03)
-g.choose_skill(1)
+g.choose_skill(0)
 count = 0
 round = []
 tic = time.time()
