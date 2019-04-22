@@ -88,19 +88,21 @@ class Game2:
     def __init__(self, basic_acc, acc_change, def_change, other_acc, acc_std, num_players,
                  head_percentage, head_mean_damage, head_std_damage, body_mean_damage, body_std_damage):
         """
-        self.basic_acc: basic accuracy of the main character
-        self.acc_change: the amount of accuracy change of skill 1 and 2
-        self.def_change: the amount of defence change of skill 1 and 2
-        self.other_acc: the mean accuracy of other players
-        self.acc_std: the standard deviation of other players
-        self.num_players: the number of players in the game
+        :param basic_acc: basic accuracy of the main character
+        :param acc_change: the amount of accuracy change of skill 1 and 2
+        :param def_change: the amount of defence change of skill 1 and 2
+        :param other_acc: the mean accuracy of other players
+        :param acc_std: the standard deviation accuracy of other players
+        :param num_players: the number of players in the game, including the main character
+        :param head_percentage: the percentage one person shoots another person in his head
+        :param head_mean_damage: the mean damage when shooting a person in his head
+        :param head_std_damage: the standard deviation damage when shooting a person in his head
+        :param body_mean_damage: the mean damage when shooting a person in his body
+        :param body_std_damage: the standard deviation damage when shooting a person in his body
+        The above param will be stored in self.param. In addition, two other params will be calculated after
+        the main character choosing his ability.
         self.acc: the accuracy of the main character after choosing the ability
         self.blood: the actual blood of the main character after choosing the ability
-        self.head_percentage: the percentage one person shoots another person at his head
-        self.head_mean_damage:
-        self.head_std_damage:
-        self.body_mean_damage:
-        self.body_std_damage:
         """
         self.basic_acc = basic_acc
         self.acc_change = acc_change
@@ -115,6 +117,15 @@ class Game2:
         self.body_std_damage = body_std_damage
 
     def choose_skill(self, skill):
+        """
+        According to the skill the main character choose, initialize his accuracy and blood.
+        :param skill: The number of skill the character wants to choose.
+        If 0, use the default accuracy and defence.
+        If 1, improve the accuracy and reduce the defence.
+        If 2, imporve the defence and reduce accuracy.
+        Otherwise raise an Exception.
+        :return: None
+        """
         if skill == 0:
             self.acc = self.basic_acc
             self.blood = 100
@@ -128,6 +139,11 @@ class Game2:
             raise Exception('Please input a valid choice.')
 
     def start_a_game(self):
+        """
+        Start a game and get the result of this game.
+        :return: bool and int. The bool value means whether the main character wins the game.
+        The integer means the number of rounds a game has.
+        """
         blood, accuracy = self.initialize_a_game()
         num_players = self.num_players
         num_round = 0
@@ -149,18 +165,35 @@ class Game2:
             blood = blood[blood > 0]
 
     def initialize_a_game(self):
+        """
+        Initialize the accuracy and blood of all players.
+        :return: None
+        """
         blood = np.array([self.blood] + [100] * (self.num_players-1))
         accuracy = np.r_[self.acc, np.random.randn(self.num_players-1) * self.acc_std + self.other_acc]
         accuracy = np.clip(accuracy, 0, 1)
         return blood, accuracy
 
     def set_target(self, num_players):
+        """
+        Initiate all the targets in a round. The target of a person is uniformly random.
+        Since no one should shoot himself, we will reset the target until no one's target is himself.
+        :param num_players: the remaining number of players in the game.
+        :return: None
+        """
         res = np.random.randint(0, num_players, num_players)
         while np.sum(res == np.arange(num_players)) != 0:
             res = np.random.randint(0, num_players, num_players)
         return res
 
     def generate_hit_damage(self, target, accuracy, num_players):
+        """
+
+        :param target:
+        :param accuracy:
+        :param num_players:
+        :return:
+        """
         hit_or_not = np.random.binomial(1, accuracy)
         head_or_body = np.random.binomial(1, [self.head_percentage]*num_players)
         head_damage = np.random.rand(num_players) * self.head_std_damage + self.head_mean_damage
@@ -175,7 +208,7 @@ class Game2:
         return damage * 100
 
 
-g = Game2(0.5, 0.3, 0.1, 0.5, 0.05, 100, 0.3, 0.85, 0.0, 0.4, 0.)
+g = Game2(0.5, 0.3, 0.1, 0.5, 0.05, 100, 0.3, 0.85, 0.05, 0.4, 0.1)
 g.choose_skill(2)
 count = 0
 round = []
