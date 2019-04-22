@@ -1,6 +1,7 @@
 import numpy as np
 import time
 import matplotlib.pyplot as plt
+import collections
 
 # class Game:
 #     def __init__(self, b_acc, b_esc, skill_1_up_acc, skill_1_down_esc, skill_2_down_acc, skill_2_up_esc, num_players):
@@ -208,19 +209,21 @@ class Game2:
         return damage * 100
 
 
-g = Game2(0.5, 0.3, 0.1, 0.5, 0.05, 100, 0.3, 0.85, 0.05, 0.4, 0.1)
-g.choose_skill(2)
+num_game = 10000
+g = Game2(0.5, 0.1, 0.05, 0.5, 0.05, 100, 0.3, 0.9, 0.06, 0.45, 0.03)
+g.choose_skill(1)
 count = 0
 round = []
 tic = time.time()
-for j in range(10000):
+for j in range(num_game):
     a, b = g.start_a_game()
     if a:
         count += 1
     round.append(b)
 toc = time.time()
-print(toc - tic)
-print(count)
-
-plt.hist(round, bins=20, normed=1, edgecolor="black")
+print('Running time:', str(toc - tic)+'s')
+print('Winning rate of main character:', str(count/num_game*100)+'%')
+print('Winning rate of other characters:', str((100-count/num_game*100)/99)+'%')
+count = collections.Counter(round)
+plt.hist(round, bins=len(count), density=1, edgecolor="black")
 plt.show()
