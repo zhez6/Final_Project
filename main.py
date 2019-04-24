@@ -128,7 +128,7 @@ class Game:
         return damage * 100
 
 
-num_game = 10000
+num_game = 100000
 g = Game(0.5, 0.1, 0.05, 0.5, 0.05, 100, 0.3, 0.9, 0.06, 0.45, 0.03)
 g.choose_skill(0)
 count = 0
