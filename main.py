@@ -146,8 +146,3 @@ print('Winning rate of other characters:', str((100-count/num_game*100)/99)+'%')
 count = collections.Counter(round)
 plt.hist(round, bins=len(count), density=1, edgecolor="black")
 plt.show()
-
-
-
-
-
