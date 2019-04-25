@@ -24,9 +24,9 @@ As the chance for any player to win a game is quite low, we will simulate 100,00
 2.	For player X, choosing which option can increase his chance to win most? 
 
 **Hypotheses:**
-1. The change of player X to win the game is three times higher than that of other players 
+1. The chance of player X to win the game is three times higher than that of other players 
 2. For player X, selecting high magnificent scope can increase his chance to win most
-3. More than half of the games will finish within 15 rounds
+3. Player X is unlikely to survive more than 20 rounds in a game
 
 **Simulation variables:**  
 1. basic_acc: basic accuracy of the player X  
@@ -49,16 +49,16 @@ the main character choosing his ability.
 
 **Preliminary results:**
 1) Select skill one: increase 10% shooting rate, but will reduce the ability to resist damage 5%  
-   Winning rate of Player X: 1.397%  
-   Winning rate of other characters: 0.995989898989899%
+   Winning rate of Player X: 1.425%  
+   Winning rate of other characters: 0.9957070707070708%
 
 2) Select skill two: increase the capability that resists damage by 10%., but will reduce the shooting hit rate 5%  
-   Winning rate of Player X: 0.996%  
-   Winning rate of other characters: 1.000040404040404%  
+   Winning rate of Player X: 1.0210000000000001%  
+   Winning rate of other characters: 0.9997878787878788%  
 
 3) Use the initial settings  
-   Winning rate of Player X: 1.2309999999999999%  
-   Winning rate of other characters: 0.9976666666666667%
+   Winning rate of Player X: 1.168%  
+   Winning rate of other characters: 0.9983030303030302%
 
 **References:**
 
