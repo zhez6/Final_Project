@@ -11,6 +11,8 @@ This project is inspired by the video game, PlayUnkown’s Battlegrounds (PUBG),
 2.	At the beginning of each game, each player’s shooting hit rate will be reset. 
 3.	Each player has an HP value of 100. When HP is less than or equal to 0, the player will be eliminated. 
 4.	The damage to players who get shot depend on which body parts are shot. There is 30% of chance being shot on head and 70% on other body parts. The damage to the head and the damage to other parts of the body follow normal distribution as well. 
+5. The game ends either when player X is eliminated or player X becomes the final winner. 
+6. Each game must have a winner. If there are only two players, player X and another player, standing on the ground and they hit each other in which the damages are over HP at the same time, then player X will be the winner.  
 
 **Special game conditions:**
 1.	Select high magnification scope: increase X% shooting rate, but will reduce the ability to resist damage Y%
@@ -26,7 +28,7 @@ As the chance for any player to win a game is quite low, we will simulate 100,00
 **Hypotheses:**
 1. The chance of player X to win the game is three times higher than that of other players 
 2. For player X, selecting high magnificent scope can increase his chance to win most
-3. Player X is unlikely to survive more than 20 rounds in a game
+3. Player X is likely to survive after 10 rounds in a game
 
 **Simulation variables:**  
 1. basic_acc: basic accuracy of the player X  
