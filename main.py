@@ -130,7 +130,7 @@ class Game:
 
 num_game = 100000
 g = Game(0.5, 0.1, 0.05, 0.5, 0.05, 100, 0.3, 0.9, 0.06, 0.45, 0.03)
-g.choose_skill(1)
+g.choose_skill(0)
 count = 0
 round = []
 tic = time.time()
@@ -145,4 +145,7 @@ print('Winning rate of main character:', str(count/num_game*100)+'%')
 print('Winning rate of other characters:', str((100-count/num_game*100)/99)+'%')
 count = collections.Counter(round)
 plt.hist(round, bins=len(count), density=1, edgecolor="black")
+plt.title('Frequency vs The number of rounds when a game ends')
+plt.xlabel('Rounds')
+plt.ylabel('Frequence')
 plt.show()
