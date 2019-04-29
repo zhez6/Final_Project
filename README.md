@@ -12,7 +12,7 @@ This project is inspired by the video game, PlayUnkown’s Battlegrounds (PUBG),
 3.	Each player has an HP value of 100. When HP is less than or equal to 0, the player will be eliminated. 
 4.	The damage to players who get shot depend on which body parts are shot. There is 30% of chance being shot on head and 70% on other body parts. The damage to the head and the damage to other parts of the body follow normal distribution as well. 
 5. The game ends either when player X is eliminated or player X becomes the final winner. 
-6. Each game must have a winner. If there are only two players, player X and another player, standing on the ground and they hit each other in which the damages are over HP at the same time, then player X will be the winner.  
+6. Each game must have a winner. If there are only two players standing on the ground and they hit each other in which the damages are over HP simultaneously, a winner will be randomly chosen.  
 
 **Special game conditions:**
 1.	Select high magnification scope: increase X% shooting rate, but will reduce the ability to resist damage Y%
@@ -51,16 +51,16 @@ the main character choosing his ability.
 
 **Preliminary results:**
 1) Select skill one: increase 10% shooting rate, but will reduce the ability to resist damage 5%  
-   Winning rate of Player X: 1.377%  
-   Average winning rate of other characters: 0.996%
-
+   Winning rate of Player X: 1.147%  
+   Average winning rate of other characters: 0.999%
+    
 2) Select skill two: increase the capability that resists damage by 10%., but will reduce the shooting hit rate 5%  
-   Winning rate of Player X: 0.939%  
-   Average winning rate of other characters: 1.000%  
+   Winning rate of Player X: 0.810%  
+   Average winning rate of other characters: 1.002%  
 
-3) Use the initial settings  
-   Winning rate of Player X: 1.210%  
-   Average winning rate of other characters: 0.998%
+3) Use the Default settings  
+   Winning rate of Player X: 1.018% 
+   Average winning rate of other characters: 1.000%
 
 **References:**
 
