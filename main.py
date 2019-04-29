@@ -77,7 +77,11 @@ class Game:
                 return True, num_round
             if blood[0] <= 0:
                 if np.sum(blood > 0) == 0:
-                    return True, num_round
+                    temp = np.random.randint(blood.shape[0])
+                    if temp == 0:
+                        return True, num_round
+                    else:
+                        return False, num_round
                 else:
                     return False, num_round
             accuracy = accuracy[blood > 0]
