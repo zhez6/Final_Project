@@ -53,14 +53,15 @@ the main character choosing his ability.
 1) Select skill one: increase 10% shooting rate, but will reduce the ability to resist damage 5%  
    Winning rate of Player X: 1.147%  
    Average winning rate of other characters: 0.999%
-   
+   ![Image text](https://github.com/zhez6/Final_Project/blob/master/Choose%20Skill%20One.png)
 2) Select skill two: increase the capability that resists damage by 10%., but will reduce the shooting hit rate 5%  
    Winning rate of Player X: 0.810%  
    Average winning rate of other characters: 1.002%  
-
+   ![Image text](https://github.com/zhez6/Final_Project/blob/master/Choose%20Skill%20Two.png)
 3) Use the Default settings  
-   Winning rate of Player X: 1.018% 
-   Average winning rate of other characters: 1.000%
+   Winning rate of Player X: 1.018%  
+   Average winning rate of other characters: 1.000%  
+   ![Image text](https://github.com/zhez6/Final_Project/blob/master/Default%20settings.png)
 
 **References:**
 
