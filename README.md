@@ -47,13 +47,13 @@ The above param will be stored in self.param. In addition, two other params will
 the main character choosing his ability.  
 
 1. self.acc: the accuracy of the main character after choosing the ability  
-2. self.blood: the actual blood of the main character after choosing the ability  
+2. self.blood: the actual HP of the main character after choosing the ability  
 
 **Preliminary results:**
 1) Select skill one: increase 10% shooting rate, but will reduce the ability to resist damage 5%  
    Winning rate of Player X: 1.147%  
    Average winning rate of other characters: 0.999%
-    
+   
 2) Select skill two: increase the capability that resists damage by 10%., but will reduce the shooting hit rate 5%  
    Winning rate of Player X: 0.810%  
    Average winning rate of other characters: 1.002%  
