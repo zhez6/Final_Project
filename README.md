@@ -59,7 +59,7 @@ the main character choosing his ability.
    Average winning rate of other characters: 1.002%  
 
 3) Use the Default settings  
-   Winning rate of Player X: 1.018% 
+   Winning rate of Player X: 1.018%   
    Average winning rate of other characters: 1.000%
 
 **References:**
