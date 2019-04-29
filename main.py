@@ -91,7 +91,7 @@ class Game:
     def initialize_a_game(self):
         """
         Initialize the accuracy and blood of all players.
-        :return: None
+        :return: the accuracy and blood of all players
         """
         blood = np.array([self.blood] + [100] * (self.num_players-1))
         accuracy = np.r_[self.acc, np.random.randn(self.num_players-1) * self.acc_std + self.other_acc]
@@ -103,7 +103,7 @@ class Game:
         Initiate all the targets in a round. The target of a person is uniformly random.
         Since no one should shoot himself, we will reset the target until no one's target is himself.
         :param num_players: the remaining number of players in the game.
-        :return: None
+        :return: the target every player shoots in a round
         """
         res = np.random.randint(0, num_players, num_players)
         while np.sum(res == np.arange(num_players)) != 0:
@@ -113,10 +113,10 @@ class Game:
     def generate_hit_damage(self, target, accuracy, num_players):
         """
 
-        :param target:
-        :param accuracy:
-        :param num_players:
-        :return:
+        :param target: the target every player shoots in this round
+        :param accuracy: the shooting accuracy of every player
+        :param num_players: the number of players
+        :return: the damage every player gets in this round
         """
         hit_or_not = np.random.binomial(1, accuracy)
         head_or_body = np.random.binomial(1, [self.head_percentage]*num_players)
