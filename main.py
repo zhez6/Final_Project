@@ -23,6 +23,10 @@ class Game:
         the main character choosing his ability.
         self.acc: the accuracy of the main character after choosing the ability
         self.blood: the actual blood of the main character after choosing the ability
+        >>> g = Game(0.5, 0.1, 0.05, 0.5, 0.05, 100, 0.3, 0.9, 0.06, 0.45, 0.03)
+        >>> g.basic_acc, g.acc_change, g.def_change, g.other_acc, g.acc_std, g.num_players, g.head_percentage, \
+        g.head_mean_damage, g.head_std_damage, g.body_mean_damage, g.body_std_damage
+        (0.5, 0.1, 0.05, 0.5, 0.05, 100, 0.3, 0.9, 0.06, 0.45, 0.03)
         """
         self.basic_acc = basic_acc
         self.acc_change = acc_change
@@ -45,6 +49,16 @@ class Game:
         If 2, imporve the defence and reduce accuracy.
         Otherwise raise an Exception.
         :return: None
+        >>> g = Game(0.5, 0.1, 0.05, 0.5, 0.05, 100, 0.3, 0.9, 0.06, 0.45, 0.03)
+        >>> g.choose_skill(0)
+        >>> g.acc, g.blood
+        (0.5, 100)
+        >>> g.choose_skill(1)
+        >>> g.acc, g.blood
+        (0.6, 95.23809523809524)
+        >>> g.choose_skill(2)
+        >>> g.acc, g.blood
+        (0.4, 105.26315789473685)
         """
         if skill == 0:
             self.acc = self.basic_acc
@@ -92,6 +106,18 @@ class Game:
         """
         Initialize the accuracy and blood of all players.
         :return: the accuracy and blood of all players
+        >>> g = Game(0.5, 0.1, 0.05, 0.5, 0.05, 100, 0.3, 0.9, 0.06, 0.45, 0.03)
+        >>> g.choose_skill(0)
+        >>> blood, accuracy = g.initialize_a_game()
+        >>> blood[0]
+        100
+        >>> int(np.mean(blood[1:]))
+        100
+        >>> accuracy[0]
+        0.5
+        >>> np.abs(np.mean(accuracy[1:])-0.5) < 0.01
+        True
+
         """
         blood = np.array([self.blood] + [100] * (self.num_players-1))
         accuracy = np.r_[self.acc, np.random.randn(self.num_players-1) * self.acc_std + self.other_acc]
@@ -104,6 +130,10 @@ class Game:
         Since no one should shoot himself, we will reset the target until no one's target is himself.
         :param num_players: the remaining number of players in the game.
         :return: the target every player shoots in a round
+        >>> g = Game(0.5, 0.1, 0.05, 0.5, 0.05, 100, 0.3, 0.9, 0.06, 0.45, 0.03)
+        >>> target = g.set_target(100)
+        >>> np.where(target == np.arange(100))[0].shape
+        (0,)
         """
         res = np.random.randint(0, num_players, num_players)
         while np.sum(res == np.arange(num_players)) != 0:
@@ -112,11 +142,17 @@ class Game:
 
     def generate_hit_damage(self, target, accuracy, num_players):
         """
-
+        This function is used to generate the damage every player got in a round.
         :param target: the target every player shoots in this round
         :param accuracy: the shooting accuracy of every player
         :param num_players: the number of players
         :return: the damage every player gets in this round
+        >>> g = Game(0.5, 0.1, 0.05, 0.5, 0.05, 100, 1, 0.9, 0.0, 0.45, 0.0)
+        >>> g.choose_skill(0)
+        >>> target = np.array([1, 0, 3, 2])
+        >>> accuracy = np.array([1, 1, 1, 1])
+        >>> np.mean(g.generate_hit_damage(target, accuracy, 4))
+        90.0
         """
         hit_or_not = np.random.binomial(1, accuracy)
         head_or_body = np.random.binomial(1, [self.head_percentage]*num_players)
@@ -131,25 +167,27 @@ class Game:
                 damage[target[i]] += actual_damage[i]
         return damage * 100
 
+def main():
+    num_game = 100000
+    g = Game(0.5, 0.1, 0.05, 0.5, 0.05, 100, 0.3, 0.9, 0.06, 0.45, 0.03)
+    g.choose_skill(0)
+    count = 0
+    round = []
+    tic = time.time()
+    for j in range(num_game):
+        a, b = g.start_a_game()
+        if a:
+            count += 1
+        round.append(b)
+    toc = time.time()
+    print('Running time:', str(toc - tic)+'s')
+    print('Winning rate of main character:', str(count/num_game*100)+'%')
+    print('Winning rate of other characters:', str((100-count/num_game*100)/99)+'%')
+    count = collections.Counter(round)
+    plt.hist(round, bins=len(count), density=1, edgecolor="black")
+    plt.title('Frequency vs The number of rounds when a game ends')
+    plt.xlabel('Rounds')
+    plt.ylabel('Frequence')
+    plt.show()
 
-num_game = 100000
-g = Game(0.5, 0.1, 0.05, 0.5, 0.05, 100, 0.3, 0.9, 0.06, 0.45, 0.03)
-g.choose_skill(0)
-count = 0
-round = []
-tic = time.time()
-for j in range(num_game):
-    a, b = g.start_a_game()
-    if a:
-        count += 1
-    round.append(b)
-toc = time.time()
-print('Running time:', str(toc - tic)+'s')
-print('Winning rate of main character:', str(count/num_game*100)+'%')
-print('Winning rate of other characters:', str((100-count/num_game*100)/99)+'%')
-count = collections.Counter(round)
-plt.hist(round, bins=len(count), density=1, edgecolor="black")
-plt.title('Frequency vs The number of rounds when a game ends')
-plt.xlabel('Rounds')
-plt.ylabel('Frequence')
-plt.show()
+main()
