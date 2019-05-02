@@ -63,6 +63,14 @@ the main character choosing his ability.
    Average winning rate of other characters: 1.000%  
    ![Image text](https://github.com/zhez6/Final_Project/blob/master/Default%20settings.png)
 
+**Conclusion:**
+1. Based on our preliminary results, the winning chance of player X, no matter what option he may choose, is not
+significant higher than the average winning chance of other players.Thus, hypothesis 1 seems to be incorrect. 
+2. From the simulation results, the selecting skill one (i.e. selecting high magnificent scope) increases Player X's chance of 
+winning most. Thus, hypothesis two seems to be reasonable. 
+3. From the Frequency vs The number of rounds when a game ends histograms, the probability of player X to survive after 
+10 rounds in each game is quite small. Thus, hypothesis three seems to be incorrect. 
+
 **References:**
 
 GAMEPLAY RELATED. Retrieved from https://support.pubg.com/hc/en-us/categories/115000247733-GAMEPLAY-RELATED  
